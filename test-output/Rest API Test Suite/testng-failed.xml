@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Rest API Test Suite]" parallel="tests">
+  <listeners>
+    <listener class-name="com.qa.api.gorest.listeners.ExtentReportListener"/>
+  </listeners>
+  <test name="Rest API regression Test(failed)" parallel="classes">
+    <classes>
+      <class name="com.qa.api.gorest.testCases.CreateUserTest">
+        <methods>
+          <include name="createUserAPIPostTest" invocation-numbers="0 1 2 3 4"/>
+        </methods>
+      </class> <!-- com.qa.api.gorest.testCases.CreateUserTest -->
+      <class name="com.qa.api.gorest.testCases.GetImgurAPITest">
+        <methods>
+          <include name="setUp"/>
+          <include name="uploadImagePostAPITest"/>
+          <include name="getAccountImagesTest"/>
+          <include name="getAccountBlockStatusTest"/>
+        </methods>
+      </class> <!-- com.qa.api.gorest.testCases.GetImgurAPITest -->
+      <class name="com.qa.api.gorest.testCases.GetUserTest">
+        <methods>
+          <include name="getAllUsersAPITest"/>
+          <include name="getUsersWithQueryParamsAPITest"/>
+        </methods>
+      </class> <!-- com.qa.api.gorest.testCases.GetUserTest -->
+    </classes>
+  </test> <!-- Rest API regression Test(failed) -->
+</suite> <!-- Failed suite [Rest API Test Suite] -->
